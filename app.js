@@ -3,6 +3,11 @@ const jimp = require('jimp')
 const fs = require('fs')
 const app = express()
 
+/*
+    MADE IN 15 MINUTES.
+    IMAGINE WHAT I CAN DO WITH 24 HOURS!
+*/
+
 function display(req, res) {
     fs.readFile('views.txt', "utf8", (err, data) => {
         if (err) throw err;
