@@ -15,10 +15,10 @@ function display(req, res) {
         let views = parseInt(data) + 1;
         console.log("Current views: " + views);
 
-        let blurLevel = 10 - views;
+        let blurLevel = Math.pow((10 - views), 2);
         console.log(blurLevel);
 
-        if(blurLevel > 2) {
+        if(blurLevel > 1) {
           fs.writeFile('views.txt', views, 'utf8', (err) => {
               if (err) throw err;
               console.log("Views file has been updated.");
@@ -58,6 +58,6 @@ app.get('/', function (req, res) {
     });
 })
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+app.listen(3001, function () {
+    console.log('running meme generator on port 3001!')
 })
